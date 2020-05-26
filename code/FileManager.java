@@ -9,9 +9,9 @@ import java.util.*;
 
 public class FileManager {
 	
-	// String useful for I/O operation
-	final String SOL_SUFFIX = "_DMOgroup12.sol";
-	private final static String EXAM_SUFFIX = ".exm";
+    // String useful for I/O operation
+    final String SOL_SUFFIX = "_DMOgroup12.sol";
+    private final static String EXAM_SUFFIX = ".exm";
     private final static String STUDENT_SUFFIX = ".stu";
     private final static String TIMESLOT_SUFFIX = ".slo";
     
