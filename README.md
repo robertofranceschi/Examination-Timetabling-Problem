@@ -30,6 +30,8 @@ where `INT1` is the student ID and `INT2` is the ID of the exam in which student
 ## Linear Programmimg - Problem Formulation
 
 
+## Results
+
 ### Run the .jar file
 In order to run the program the input files (`.exm`, `.slo`, `.stu`) for every instance _**must be**_ in the same folder of the `.jar` file.
 
