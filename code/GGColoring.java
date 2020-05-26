@@ -101,7 +101,7 @@ public class GGColoring {
 
 					*/
 					System.out.println("ATTENZIONE - Troppi backtrack effettuati. "
-							+ "Ci si mette troppo con questo ordinamento oppure non Ë "
+							+ "Ci si mette troppo con questo ordinamento oppure non √® "
 							+ "proprio possibile trovare una soluzione feasible.\" ");
 				} else {
 					
@@ -130,7 +130,7 @@ public class GGColoring {
 
 						System.out.println(s.getS1().toString());	
 						System.out.println("nBack = " + this.currentBacktracks);
-						System.out.println("ATTENZIONE - La soluzione trovata in realt‡ NON E' FEASIBLE anche se lo pensavo");
+						System.out.println("ATTENZIONE - La soluzione trovata in realt√† NON E' FEASIBLE anche se lo pensavo");
 
 						return null;						
 					}
@@ -147,10 +147,10 @@ public class GGColoring {
 			tentativi++;
 			if(tentativi >= maxTentativi) {
 				/*
-					Non sono riuscito a costruire una popolazione della cardinalit‡ richiesta
+					Non sono riuscito a costruire una popolazione della cardinalit√† richiesta
 				*/
 				
-				System.out.println("Non sono risucito a costruire una popolazione della cardinalit‡ richiesta");
+				System.out.println("Non sono risucito a costruire una popolazione della cardinalit√† richiesta");
 				break;
 			}
 			
@@ -171,7 +171,7 @@ public class GGColoring {
 			return true;
 		
 		
-		// Tabu list con timeslots gi‡ provati:
+		// Tabu list con timeslots gi√† provati:
 		List<Integer> tabuList_timeslot = new LinkedList<Integer>();
 		
 		// Salva la satDegree attuale per ripristinarla in un eventuale backtrack
@@ -183,7 +183,7 @@ public class GGColoring {
 		int esameDaMettere = -1;
 		
 		if (k>this.firstNExamsPerLargestDegree) { // siamo nel caso in cui tutti i t.slot hanno 1 esame
-			//l'esame da mettere Ë il pi˘ piccolo indice presente in saturationDegreePerExam
+			//l'esame da mettere √® il pi√π piccolo indice presente in saturationDegreePerExam
 			
 			int ottimo = 90000;
 		
@@ -213,8 +213,8 @@ public class GGColoring {
 			if(isTimeSlotAvailableForExam(timeslot,esameDaMettere,s.getS2(),this.M)) {
 				
 				/**
-				# Sto provando a metterlo nel timeslot t che Ë disponibile
-				# Se alla fine NON riesco a trovare una soluzione feasible cosÏ, aggiungi questo timeslot
+				# Sto provando a metterlo nel timeslot t che √® disponibile
+				# Se alla fine NON riesco a trovare una soluzione feasible cos√¨, aggiungi questo timeslot
 				# alla tabulist e non provare a liberare questo timeslot nella funzione tryMakingRoomForThisExam
 				#
 				 */
@@ -239,7 +239,7 @@ public class GGColoring {
 				
 				this.saturationDegreePerExam.set(esameDaMettere, 10000);
 //				if ( s.getS2().get(timeslot).contains((Integer)esameDaMettere)) {
-//					System.out.println("lo conteneva gi‡ TS=" + timeslot + " esame = " + esameDaMettere);
+//					System.out.println("lo conteneva gi√† TS=" + timeslot + " esame = " + esameDaMettere);
 //					System.out.println(s.getS2().toString());
 //				}
 				
@@ -254,7 +254,7 @@ public class GGColoring {
 				else {
 					
 					/**
-					 * Mettendo l'esame in questo timeslot sono arrivato in un punto di stallo e non son pi˘ potuto andare avanti.
+					 * Mettendo l'esame in questo timeslot sono arrivato in un punto di stallo e non son pi√π potuto andare avanti.
 					   Faccio backtrack e provo con il prossimo timeslot
 					 */
 					
@@ -270,8 +270,8 @@ public class GGColoring {
 		
 		/**
 		 *  Se arrivo qui vuol dire che non esiste un timeslot disponibile in cui mettere "esameDaMettere"
-		# o quelli disponibili li ho gi‡ provati e la ricorsione Ë tornata in backtrack.
-		# Provo ad agire spostando degli esami gi‡ messi e provando a far spazio in un timeslot qualsiasi per questo esameDaMettere
+		# o quelli disponibili li ho gi√† provati e la ricorsione √® tornata in backtrack.
+		# Provo ad agire spostando degli esami gi√† messi e provando a far spazio in un timeslot qualsiasi per questo esameDaMettere
 		 */
 		
 		
@@ -286,7 +286,7 @@ public class GGColoring {
 		
 		if(tryMakingRoomForThisExam(M,tMax,nExam,esameDaMettere,tabuList_timeslot, s, k)==true) {
 			
-			// si Ë trovato un modo per spostare degli esami e far spazio all'esameDaMettere
+			// si √® trovato un modo per spostare degli esami e far spazio all'esameDaMettere
 			
 			if(ricorsione(k+1, M, tMax,s)==true) {
 				return true;
@@ -454,7 +454,7 @@ public class GGColoring {
 					*/
 
 					System.out.println(halfSolution.getS1().toString());						
-					System.out.println("ATTENZIONE - La soluzione trovata in realt‡ NON E' FEASIBLE anche se lo pensavo");
+					System.out.println("ATTENZIONE - La soluzione trovata in realt√† NON E' FEASIBLE anche se lo pensavo");
 
 					return null;
 				}
@@ -609,7 +609,7 @@ public class GGColoring {
 		/*
 
 			Non considero tutti i timeslot per mettere questo esame
-			(alcuni magari li ho gi‡ provati e sono tornati in backtrack)
+			(alcuni magari li ho gi√† provati e sono tornati in backtrack)
 		
 		*/
 		for(int i=0; i<tabuList_timeslot.size();i++) {
@@ -634,7 +634,7 @@ public class GGColoring {
 
 			for(Integer e : conflictsPerTimeslot.get(t)) {
 				
-				// Trova i suoi timeSlot disponibili oltre a quello in cui Ë gi‡
+				// Trova i suoi timeSlot disponibili oltre a quello in cui √® gi√†
 				availableTimeSlot = new LinkedList<Integer>();
 				for(int j=0; j<tMax; j++)
 					if(j!=t)
@@ -655,7 +655,7 @@ public class GGColoring {
 
 					/**
 					 * Sposta l'esame "e" in uno qualsiasi dei suoi timeslot disponibili
-					 * cosÏ da iniziare a liberare il timeslot t dai conflitti esistenti
+					 * cos√¨ da iniziare a liberare il timeslot t dai conflitti esistenti
 					 * con l'esameDaMettere
 					 * 
 					 * Mi salvo gli spostamenti fatti per tornare indietro qualora non 
@@ -742,7 +742,7 @@ public class GGColoring {
 		return false;
 	}
 
-	// ritorna vero se Ë disponibile un timeslot
+	// ritorna vero se √® disponibile un timeslot
 	private boolean isTimeSlotAvailableForExam(int timeslot, int esameDaMettere, Map<Integer, List<Integer>> s2 , int[][] M) {
 		
 //		System.out.println(timeslot + "\n" + s2.toString());
@@ -798,7 +798,7 @@ public class GGColoring {
 	/**
 	 * Trova un numero N che permetta di ordinare i timeslots di 6 
 	 * in 6 con l'approccio del resto delle divisioni.
-	 * N Ë intero t.c. N = i*6 + 3, con i pi˘ piccolo possibile e N >= tMax
+	 * N √® intero t.c. N = i*6 + 3, con i pi√π piccolo possibile e N >= tMax
 	 */
 
 	private int getNumeroN(int tMax) {
