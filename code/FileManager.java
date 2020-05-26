@@ -96,7 +96,7 @@ public class FileManager {
 			int indexCurrentExam = exams.get(originalId).getId();
 			
 			// popolo matrice e lista di adiacenza
-			if(students.containsKey(matStud)) { // se lo studente Ë gi‡ presente
+			if(students.containsKey(matStud)) { // se lo studente √® gi√† presente
 				for (Exam e : students.get(matStud).exams) {
 					
 					M[indexCurrentExam][e.getId()]++;
@@ -122,7 +122,7 @@ public class FileManager {
 				}
 				
 				students.get(matStud).exams.add(exams.get(originalId));
-			} else { // se non Ë presente creo lo studente e aggiungo alla lista students
+			} else { // se non √® presente creo lo studente e aggiungo alla lista students
 				Student s = new Student(matStud);
 		        s.exams.add(exams.get(originalId));
 		        students.put(matStud, s);
