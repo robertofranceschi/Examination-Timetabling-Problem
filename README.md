@@ -1,7 +1,7 @@
 # Examination-Timetabling-Problem
 This repository contains the project assignment for the _**Decision Making and Optimization**_ course at the Politecnico di Torino. 
 
-Group 12: Chiara Tomei, Gabriele Tiboni, Paola Privitera, Roberto Fransceschi, Tommaso Cal\`o, Valerio Di Eugenio
+Group 12: Chiara Tomei, Gabriele Tiboni, Paola Privitera, Roberto Fransceschi, Tommaso Calò, Valerio Di Eugenio
 
 ### Abstract
 This project presents a heuristic to solve a simplified examination timetabling problem. 
