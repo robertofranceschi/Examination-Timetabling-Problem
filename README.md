@@ -3,9 +3,9 @@ This project presents a heuristic to solve a simplified examination timetabling 
 
 
 ### Run the .jar file
-In order to run the program the input files (`.exm` `.slo` `.stu`) for every instance MUST BE in the same folder of the `.jar` file.
+In order to run the program the input files (`.exm`, `.slo`, `.stu`) for every instance _**must be**_ in the same folder of the `.jar` file.
 
-`$ java -jar ETPsolver_DMOgroup12.jar instancename -t tlim`
+      `$ java -jar ETPsolver_DMOgroup12.jar instancename -t tlim`
 
 You can find the output file (`instanceXX.sol`) again in the same folder of the `.jar` file. The file .sol will be overwritten
 every time a better solution is found.
